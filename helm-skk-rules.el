@@ -12,7 +12,7 @@
    skk-rom-kana-rule-list
    skk-azik-additional-rom-kana-rule-list))
 
-(defun helm-get-skk-rules ()
+(defun helm-get-skk-rules-init ()
   (let ((get-rules
          (lambda ()
            (loop with sep = " "
@@ -36,7 +36,7 @@
 
 (defvar helm-skk-rules-sources
   '((name . "helm-skk-rules")
-    (init . helm-get-skk-rules)
+    (init . helm-get-skk-rules-init)
     (candidates-in-buffer)
     (delayed)))
 
